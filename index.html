@@ -21,9 +21,11 @@
                     },
                     colors: {
                         brand: {
-                            'yellow': '#FDE047', // Amarelo vibrante
-                            'dark': '#111827',   // Cinza escuro/quase preto
-                            'light': '#F9FAFB',  // Cinza claro
+                            'yellow': '#FDE047',      // Amarelo vibrante (mantido)
+                            'purple': {
+                                'DEFAULT': '#1A0B2E', // Roxo Meia Noite (principal)
+                                'light': '#2A114A'   // Tom mais claro para cards e detalhes
+                            }
                         }
                     }
                 }
@@ -43,15 +45,16 @@
         }
     </style>
 </head>
-<body class="bg-brand-dark text-brand-light">
+<body class="bg-brand-purple text-white">
 
-    <header class="bg-black/50 backdrop-blur-sm sticky top-0 z-50">
+    <header class="bg-brand-purple/50 backdrop-blur-sm sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-yellow"><path d="M12 6.5c0-1.5-2.5-3-2.5-3s-2.5 1.5-2.5 3S9.5 8 12 8s2.5-1.5 2.5-1.5S12 8 12 6.5Z"></path><path d="m15.5 12-3.5-2-3.5 2"></path><path d="M12 15.5c0-1.5-2.5-3-2.5-3s-2.5 1.5-2.5 3S9.5 17 12 17s2.5-1.5 2.5-1.5S12 17 12 15.5Z"></path><path d="M4.5 9.5 2 12l2.5 2.5"></path><path d="M19.5 9.5 22 12l-2.5 2.5"></path></svg>
                 <h1 class="text-2xl font-bold text-white">EnergyFit</h1>
             </a>
             <nav class="hidden md:flex items-center gap-8 text-white">
+                <a href="#sobre" class="hover:text-brand-yellow transition-colors">Sobre</a>
                 <a href="#aulas" class="hover:text-brand-yellow transition-colors">Aulas</a>
                 <a href="#planos" class="hover:text-brand-yellow transition-colors">Planos</a>
                 <a href="#depoimentos" class="hover:text-brand-yellow transition-colors">Depoimentos</a>
@@ -63,8 +66,9 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 absolute top-full left-0 w-full">
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-purple-light absolute top-full left-0 w-full">
             <nav class="flex flex-col items-center gap-6 py-8 text-white">
+                <a href="#sobre" class="hover:text-brand-yellow transition-colors">Sobre</a>
                 <a href="#aulas" class="hover:text-brand-yellow transition-colors">Aulas</a>
                 <a href="#planos" class="hover:text-brand-yellow transition-colors">Planos</a>
                 <a href="#depoimentos" class="hover:text-brand-yellow transition-colors">Depoimentos</a>
@@ -77,7 +81,7 @@
 
     <main>
         <section class="h-screen min-h-[650px] flex items-center justify-center relative bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop');">
-            <div class="absolute inset-0 bg-black/70"></div>
+            <div class="absolute inset-0 bg-brand-purple/70"></div>
             <div class="container mx-auto px-6 text-center z-10">
                 <h2 class="text-4xl md:text-6xl font-black uppercase tracking-wider leading-tight mb-4 text-white">
                     Sua energia <br/> <span class="text-brand-yellow">transformada em força</span>
@@ -86,51 +90,152 @@
                     Chega de treinos chatos. Na EnergyFit você encontra a vibe, a comunidade e os melhores equipamentos para alcançar seus objetivos.
                 </p>
                 <a href="#planos" class="bg-brand-yellow text-black font-bold py-4 px-8 rounded-full text-lg uppercase hover:bg-yellow-300 transition-transform transform hover:scale-105 inline-block">
-                    Comece a transformação
+                    Conheça os planos
                 </a>
             </div>
         </section>
 
-        <section id="aulas" class="py-20 bg-gray-900 fade-in-section">
+        <section id="sobre" class="py-20 bg-brand-purple fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=1965&auto=format&fit=crop" alt="Interior da academia EnergyFit" class="rounded-lg shadow-2xl">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-3xl md:text-4xl font-bold mb-4 text-white">Mais que uma academia, <span class="text-brand-yellow">um ponto de encontro.</span></h3>
+                        <p class="text-gray-400 mb-4">
+                            Nossa missão é ser o ponto alto do seu dia. Cansado do tradicional? Nós também. Criamos um espaço onde a energia é contagiante, a música te impulsiona e cada treino é uma nova experiência. 
+                        </p>
+                        <p class="text-gray-400">
+                            Acreditamos que a verdadeira transformação vai além do físico. Promovemos um ambiente acolhedor e motivador, onde a conexão entre os membros é incentivada. Aqui você constrói músculos, amizades e a sua melhor versão.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="aulas" class="py-20 bg-brand-purple-light fade-in-section">
             <div class="container mx-auto px-6 text-center">
                 <h3 class="text-3xl md:text-4xl font-bold mb-4 text-white">Modalidades Feitas para Você</h3>
-                <p class="text-gray-400 max-w-2xl mx-auto mb-12">
+                <p class="text-gray-300 max-w-2xl mx-auto mb-12">
                     Temos a aula perfeita para o seu objetivo. E para a sua vibe.
                 </p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-brand-dark p-8 rounded-lg border border-gray-700 transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="bg-brand-purple p-8 rounded-lg border border-purple-900 transform hover:-translate-y-2 transition-transform duration-300">
                         <h4 class="text-2xl font-bold mb-2 text-brand-yellow">HIIT Explosivo</h4>
                         <p class="text-gray-400">Queime o máximo de calorias no menor tempo. Desafie seus limites a cada segundo.</p>
                     </div>
-                    <div class="bg-brand-dark p-8 rounded-lg border border-gray-700 transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="bg-brand-purple p-8 rounded-lg border border-purple-900 transform hover:-translate-y-2 transition-transform duration-300">
                         <h4 class="text-2xl font-bold mb-2 text-brand-yellow">Funcional Dinâmico</h4>
                         <p class="text-gray-400">Desenvolva força, equilíbrio e agilidade com movimentos que preparam seu corpo para o dia a dia.</p>
                     </div>
-                    <div class="bg-brand-dark p-8 rounded-lg border border-gray-700 transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="bg-brand-purple p-8 rounded-lg border border-purple-900 transform hover:-translate-y-2 transition-transform duration-300">
                         <h4 class="text-2xl font-bold mb-2 text-brand-yellow">FitDance Hits</h4>
                         <p class="text-gray-400">Perca calorias e acabe com o estresse dançando os maiores hits do momento. A diversão é garantida.</p>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section id="planos" class="bg-brand-yellow text-black py-20 fade-in-section">
+        
+        <section id="planos" class="py-20 bg-brand-purple fade-in-section">
             <div class="container mx-auto px-6 text-center">
-                <h3 class="text-3xl md:text-4xl font-bold mb-4">Pronto para dar o próximo passo?</h3>
-                <p class="max-w-xl mx-auto mb-8 text-gray-800">
-                    Nossos planos são flexíveis como um alongamento bem feito. Encontre o perfeito para você e junte-se à comunidade que não para de crescer.
+                <h3 class="text-3xl md:text-4xl font-bold mb-4 text-white">Planos que se encaixam na sua rotina</h3>
+                <p class="text-gray-300 max-w-2xl mx-auto mb-12">
+                    Sem pegadinhas, sem burocracia. Escolha o plano ideal e comece a treinar hoje mesmo.
                 </p>
-                <a href="#" class="bg-black text-brand-yellow font-bold py-4 px-8 rounded-full text-lg uppercase hover:bg-gray-800 transition-colors">
-                    Ver Planos e Preços
-                </a>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div class="bg-brand-purple-light p-8 rounded-lg border border-purple-900 flex flex-col">
+                        <h4 class="text-2xl font-bold mb-2">Plano Flex</h4>
+                        <p class="text-5xl font-black mb-4">R$99<span class="text-lg font-medium text-gray-400">/mês</span></p>
+                        <ul class="text-left text-gray-400 space-y-2 mb-8 flex-grow">
+                            <li class="flex items-center gap-2">✔ Acesso à Musculação</li>
+                            <li class="flex items-center gap-2">✔ Sem taxa de cancelamento</li>
+                        </ul>
+                        <a href="#" class="mt-auto w-full bg-purple-800 text-white font-bold py-3 rounded-full hover:bg-purple-700 transition-colors">Assine Agora</a>
+                    </div>
+                    
+                    <div class="bg-brand-purple-light p-8 rounded-lg border-2 border-brand-yellow flex flex-col relative transform md:scale-105">
+                        <span class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-brand-yellow text-black text-sm font-bold px-4 py-1 rounded-full">MAIS POPULAR</span>
+                        <h4 class="text-2xl font-bold mb-2 text-brand-yellow">Plano Energy</h4>
+                        <p class="text-5xl font-black mb-4 text-white">R$119<span class="text-lg font-medium text-gray-400">/mês</span></p>
+                        <p class="text-sm text-gray-400 -mt-4 mb-4">(No plano anual)</p>
+                        <ul class="text-left text-gray-400 space-y-2 mb-8 flex-grow">
+                            <li class="flex items-center gap-2">✔ Acesso à Musculação</li>
+                            <li class="flex items-center gap-2">✔ Aulas Coletivas Inclusas</li>
+                            <li class="flex items-center gap-2">✔ Leve 1 amigo por mês</li>
+                        </ul>
+                        <a href="#" class="mt-auto w-full bg-brand-yellow text-black font-bold py-3 rounded-full hover:bg-yellow-300 transition-colors">Escolha o Plano Energy</a>
+                    </div>
+
+                    <div class="bg-brand-purple-light p-8 rounded-lg border border-purple-900 flex flex-col">
+                        <h4 class="text-2xl font-bold mb-2">Plano Black</h4>
+                        <p class="text-5xl font-black mb-4">R$129<span class="text-lg font-medium text-gray-400">/mês</span></p>
+                        <ul class="text-left text-gray-400 space-y-2 mb-8 flex-grow">
+                            <li class="flex items-center gap-2">✔ Todos os benefícios do Energy</li>
+                            <li class="flex items-center gap-2">✔ Acesso a todas unidades</li>
+                            <li class="flex items-center gap-2">✔ Cadeira de massagem</li>
+                            <li class="flex items-center gap-2">✔ Mais opções de preço</li>
+                        </ul>
+                        <a href="#" class="mt-auto w-full bg-purple-800 text-white font-bold py-3 rounded-full hover:bg-purple-700 transition-colors">Seja Black</a>
+                    </div>
+                </div>
+
+                <div class="mt-20 fade-in-section">
+                    <h3 class="text-3xl font-bold mb-4 text-white">Treine em grupo e pague menos!</h3>
+                    <p class="text-gray-300 max-w-2xl mx-auto mb-8">
+                        Junte seus amigos no <span class="font-bold text-brand-yellow">Plano Energy Anual</span> e ganhem um super desconto.
+                    </p>
+                    
+                    <div id="group-plan-container" class="bg-brand-purple-light border border-purple-900 rounded-lg p-8 max-w-3xl mx-auto">
+                        <div id="static-group-view">
+                             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                <div>
+                                    <p class="text-xl font-bold">Dupla</p>
+                                    <p class="text-3xl font-black text-brand-yellow">R$109<span class="text-base font-medium text-gray-400">/pessoa</span></p>
+                                </div>
+                                <div>
+                                    <p class="text-xl font-bold">Trio</p>
+                                    <p class="text-3xl font-black text-brand-yellow">R$104<span class="text-base font-medium text-gray-400">/pessoa</span></p>
+                                </div>
+                                <div>
+                                    <p class="text-xl font-bold">Galera (4)</p>
+                                    <p class="text-3xl font-black text-brand-yellow">R$99<span class="text-base font-medium text-gray-400">/pessoa</span></p>
+                                </div>
+                            </div>
+                            <button id="open-calculator-btn" class="mt-8 inline-block bg-brand-yellow text-black font-bold py-3 px-6 rounded-full hover:bg-yellow-300 transition-colors">Monte o seu grupo</button>
+                        </div>
+                        
+                        <div id="dynamic-calculator-view" class="hidden">
+                            <div class="flex justify-between items-center mb-6">
+                                <h4 class="text-2xl font-bold text-white">Calcule seu Desconto de Grupo</h4>
+                                <button id="close-calculator-btn" class="text-gray-400 hover:text-white text-3xl">&times;</button>
+                            </div>
+                            
+                            <label for="people-slider" class="block mb-2 text-gray-300">Selecione a quantidade de pessoas: <span id="people-count" class="font-bold text-brand-yellow text-lg">2</span></label>
+                            <input id="people-slider" type="range" min="2" max="4" value="2" class="w-full h-2 bg-purple-900 rounded-lg appearance-none cursor-pointer">
+                            
+                            <div class="mt-8 flex flex-col md:flex-row justify-around items-center bg-brand-purple p-6 rounded-lg">
+                                <div>
+                                    <p class="text-gray-400 uppercase text-sm">Preço por pessoa</p>
+                                    <p id="price-per-person" class="text-4xl font-black text-brand-yellow">R$109,00</p>
+                                </div>
+                                <div class="mt-4 md:mt-0">
+                                    <p class="text-gray-400 uppercase text-sm">Valor total mensal</p>
+                                    <p id="total-price" class="text-3xl font-bold text-white">R$218,00</p>
+                                </div>
+                            </div>
+                             <a href="#" class="mt-8 inline-block bg-brand-yellow text-black font-bold py-3 px-6 rounded-full hover:bg-yellow-300 transition-colors">Confirmar Grupo</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="depoimentos" class="py-20 bg-gray-900 fade-in-section">
+        <section id="depoimentos" class="py-20 bg-brand-purple-light fade-in-section">
             <div class="container mx-auto px-6">
                 <h3 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white">O que a nossa galera diz</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <blockquote class="bg-brand-dark p-8 rounded-xl border border-gray-700">
+                    <blockquote class="bg-brand-purple p-8 rounded-xl border border-purple-900">
                         <p class="text-lg text-gray-300 mb-6">"A EnergyFit mudou minha visão sobre academia. O ambiente é incrível, os treinos são desafiadores e fiz muitos amigos. Finalmente encontrei meu lugar!"</p>
                         <footer class="flex items-center gap-4">
                             <img class="w-14 h-14 rounded-full object-cover" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=461&auto=format&fit=crop" alt="Foto da Juliana S.">
@@ -140,7 +245,7 @@
                             </div>
                         </footer>
                     </blockquote>
-                    <blockquote class="bg-brand-dark p-8 rounded-xl border border-gray-700">
+                    <blockquote class="bg-brand-purple p-8 rounded-xl border border-purple-900">
                         <p class="text-lg text-gray-300 mb-6">"Os equipamentos são de outro nível e os instrutores realmente se importam com seu progresso. Em 3 meses, tive mais resultados aqui do que em 1 ano em outra academia."</p>
                         <footer class="flex items-center gap-4">
                             <img class="w-14 h-14 rounded-full object-cover" src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=387&auto=format&fit=crop" alt="Foto do Lucas M.">
@@ -155,24 +260,22 @@
         </section>
     </main>
 
-    <footer class="bg-black border-t border-gray-800 py-12">
+    <footer class="bg-black py-12">
         <div class="container mx-auto px-6 text-center text-gray-400">
             <p class="mb-6">EnergyFit &copy; 2025. Projeto de Marketing Ilustrativo.</p>
             <p class="text-sm">Criado por Grupo Vanguarda Wellness</p>
         </div>
     </footer>
 
-
     <script>
-        // Script para o menu mobile
+        // --- Script para o menu mobile ---
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Script para animação de fade-in ao rolar a página
+        // --- Script para animação de fade-in ao rolar a página ---
         const sections = document.querySelectorAll('.fade-in-section');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -181,10 +284,54 @@
                 }
             });
         }, { threshold: 0.1 });
+        sections.forEach(section => observer.observe(section));
 
-        sections.forEach(section => {
-            observer.observe(section);
+        // --- Script para a calculadora de grupo dinâmica ---
+        const openCalculatorBtn = document.getElementById('open-calculator-btn');
+        const closeCalculatorBtn = document.getElementById('close-calculator-btn');
+        const staticView = document.getElementById('static-group-view');
+        const dynamicView = document.getElementById('dynamic-calculator-view');
+        
+        const peopleSlider = document.getElementById('people-slider');
+        const peopleCount = document.getElementById('people-count');
+        const pricePerPersonEl = document.getElementById('price-per-person');
+        const totalPriceEl = document.getElementById('total-price');
+
+        // Função para calcular e exibir o preço
+        const updatePrice = () => {
+            const count = parseInt(peopleSlider.value);
+            peopleCount.textContent = count;
+
+            let pricePerPerson;
+
+            if (count === 2) {
+                pricePerPerson = 109; // Preço para dupla
+            } else if (count === 3) {
+                pricePerPerson = 104; // Preço para trio
+            } else { // count === 4
+                pricePerPerson = 99;  // Preço para 4
+            }
+
+            const total = count * pricePerPerson;
+
+            // Formata para moeda brasileira
+            pricePerPersonEl.textContent = pricePerPerson.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            totalPriceEl.textContent = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        };
+        
+        // Event listeners
+        openCalculatorBtn.addEventListener('click', () => {
+            staticView.classList.add('hidden');
+            dynamicView.classList.remove('hidden');
         });
+
+        closeCalculatorBtn.addEventListener('click', () => {
+            dynamicView.classList.add('hidden');
+            staticView.classList.remove('hidden');
+        });
+
+        peopleSlider.addEventListener('input', updatePrice);
+        
     </script>
 </body>
 </html>
