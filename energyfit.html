@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EnergyFit - A Sua Academia, A Sua Vibe</title>
+    <meta name="description" content="Página ilustrativa da academia EnergyFit para apresentação de marketing.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            'yellow': '#FDE047', // Amarelo vibrante
+                            'dark': '#111827',   // Cinza escuro/quase preto
+                            'light': '#F9FAFB',  // Cinza claro
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Pequeno ajuste para animação de fade-in */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-brand-light">
+
+    <header class="bg-black/50 backdrop-blur-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-yellow"><path d="M12 6.5c0-1.5-2.5-3-2.5-3s-2.5 1.5-2.5 3S9.5 8 12 8s2.5-1.5 2.5-1.5S12 8 12 6.5Z"></path><path d="m15.5 12-3.5-2-3.5 2"></path><path d="M12 15.5c0-1.5-2.5-3-2.5-3s-2.5 1.5-2.5 3S9.5 17 12 17s2.5-1.5 2.5-1.5S12 17 12 15.5Z"></path><path d="M4.5 9.5 2 12l2.5 2.5"></path><path d="M19.5 9.5 22 12l-2.5 2.5"></path></svg>
+                <h1 class="text-2xl font-bold text-white">EnergyFit</h1>
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-white">
+                <a href="#aulas" class="hover:text-brand-yellow transition-colors">Aulas</a>
+                <a href="#planos" class="hover:text-brand-yellow transition-colors">Planos</a>
+                <a href="#depoimentos" class="hover:text-brand-yellow transition-colors">Depoimentos</a>
+            </nav>
+            <a href="#" class="hidden md:block bg-brand-yellow text-black font-bold py-2 px-5 rounded-full hover:bg-yellow-300 transition-colors">
+              Matricule-se
+            </a>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 absolute top-full left-0 w-full">
+            <nav class="flex flex-col items-center gap-6 py-8 text-white">
+                <a href="#aulas" class="hover:text-brand-yellow transition-colors">Aulas</a>
+                <a href="#planos" class="hover:text-brand-yellow transition-colors">Planos</a>
+                <a href="#depoimentos" class="hover:text-brand-yellow transition-colors">Depoimentos</a>
+                <a href="#" class="mt-4 bg-brand-yellow text-black font-bold py-3 px-6 rounded-full hover:bg-yellow-300 transition-colors">
+                  Matricule-se
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="h-screen min-h-[650px] flex items-center justify-center relative bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop');">
+            <div class="absolute inset-0 bg-black/70"></div>
+            <div class="container mx-auto px-6 text-center z-10">
+                <h2 class="text-4xl md:text-6xl font-black uppercase tracking-wider leading-tight mb-4 text-white">
+                    Sua energia <br/> <span class="text-brand-yellow">transformada em força</span>
+                </h2>
+                <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+                    Chega de treinos chatos. Na EnergyFit você encontra a vibe, a comunidade e os melhores equipamentos para alcançar seus objetivos.
+                </p>
+                <a href="#planos" class="bg-brand-yellow text-black font-bold py-4 px-8 rounded-full text-lg uppercase hover:bg-yellow-300 transition-transform transform hover:scale-105 inline-block">
+                    Comece a transformação
+                </a>
+            </div>
+        </section>
+
+        <section id="aulas" class="py-20 bg-gray-900 fade-in-section">
+            <div class="container mx-auto px-6 text-center">
+                <h3 class="text-3xl md:text-4xl font-bold mb-4 text-white">Modalidades Feitas para Você</h3>
+                <p class="text-gray-400 max-w-2xl mx-auto mb-12">
+                    Temos a aula perfeita para o seu objetivo. E para a sua vibe.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-brand-dark p-8 rounded-lg border border-gray-700 transform hover:-translate-y-2 transition-transform duration-300">
+                        <h4 class="text-2xl font-bold mb-2 text-brand-yellow">HIIT Explosivo</h4>
+                        <p class="text-gray-400">Queime o máximo de calorias no menor tempo. Desafie seus limites a cada segundo.</p>
+                    </div>
+                    <div class="bg-brand-dark p-8 rounded-lg border border-gray-700 transform hover:-translate-y-2 transition-transform duration-300">
+                        <h4 class="text-2xl font-bold mb-2 text-brand-yellow">Funcional Dinâmico</h4>
+                        <p class="text-gray-400">Desenvolva força, equilíbrio e agilidade com movimentos que preparam seu corpo para o dia a dia.</p>
+                    </div>
+                    <div class="bg-brand-dark p-8 rounded-lg border border-gray-700 transform hover:-translate-y-2 transition-transform duration-300">
+                        <h4 class="text-2xl font-bold mb-2 text-brand-yellow">FitDance Hits</h4>
+                        <p class="text-gray-400">Perca calorias e acabe com o estresse dançando os maiores hits do momento. A diversão é garantida.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="planos" class="bg-brand-yellow text-black py-20 fade-in-section">
+            <div class="container mx-auto px-6 text-center">
+                <h3 class="text-3xl md:text-4xl font-bold mb-4">Pronto para dar o próximo passo?</h3>
+                <p class="max-w-xl mx-auto mb-8 text-gray-800">
+                    Nossos planos são flexíveis como um alongamento bem feito. Encontre o perfeito para você e junte-se à comunidade que não para de crescer.
+                </p>
+                <a href="#" class="bg-black text-brand-yellow font-bold py-4 px-8 rounded-full text-lg uppercase hover:bg-gray-800 transition-colors">
+                    Ver Planos e Preços
+                </a>
+            </div>
+        </section>
+
+        <section id="depoimentos" class="py-20 bg-gray-900 fade-in-section">
+            <div class="container mx-auto px-6">
+                <h3 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white">O que a nossa galera diz</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <blockquote class="bg-brand-dark p-8 rounded-xl border border-gray-700">
+                        <p class="text-lg text-gray-300 mb-6">"A EnergyFit mudou minha visão sobre academia. O ambiente é incrível, os treinos são desafiadores e fiz muitos amigos. Finalmente encontrei meu lugar!"</p>
+                        <footer class="flex items-center gap-4">
+                            <img class="w-14 h-14 rounded-full object-cover" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=461&auto=format&fit=crop" alt="Foto da Juliana S.">
+                            <div>
+                                <p class="font-bold text-white">Juliana S.</p>
+                                <p class="text-brand-yellow">Membro EnergyFit</p>
+                            </div>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="bg-brand-dark p-8 rounded-xl border border-gray-700">
+                        <p class="text-lg text-gray-300 mb-6">"Os equipamentos são de outro nível e os instrutores realmente se importam com seu progresso. Em 3 meses, tive mais resultados aqui do que em 1 ano em outra academia."</p>
+                        <footer class="flex items-center gap-4">
+                            <img class="w-14 h-14 rounded-full object-cover" src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=387&auto=format&fit=crop" alt="Foto do Lucas M.">
+                            <div>
+                                <p class="font-bold text-white">Lucas M.</p>
+                                <p class="text-brand-yellow">Membro EnergyFit</p>
+                            </div>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black border-t border-gray-800 py-12">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p class="mb-6">EnergyFit &copy; 2025. Projeto de Marketing Ilustrativo.</p>
+            <p class="text-sm">Criado por Grupo Vanguarda Wellness</p>
+        </div>
+    </footer>
+
+
+    <script>
+        // Script para o menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Script para animação de fade-in ao rolar a página
+        const sections = document.querySelectorAll('.fade-in-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
